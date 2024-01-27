@@ -11,7 +11,9 @@ import SwiftUI
 struct ListExpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
         }
     }
 }

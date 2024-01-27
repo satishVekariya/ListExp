@@ -11,6 +11,7 @@
 		677F49872B658C0100302B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F49862B658C0100302B3F /* ContentView.swift */; };
 		677F49892B658C0300302B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677F49882B658C0300302B3F /* Assets.xcassets */; };
 		677F498C2B658C0300302B3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677F498B2B658C0300302B3F /* Preview Assets.xcassets */; };
+		677F499D2B6591DF00302B3F /* ExpandableList in Frameworks */ = {isa = PBXBuildFile; productRef = 677F499C2B6591DF00302B3F /* ExpandableList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		677F49862B658C0100302B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		677F49882B658C0300302B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		677F498B2B658C0300302B3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		677F499A2B658F6F00302B3F /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677F499D2B6591DF00302B3F /* ExpandableList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +38,10 @@
 		677F49782B658C0100302B3F = {
 			isa = PBXGroup;
 			children = (
+				677F49992B658F4800302B3F /* Packages */,
 				677F49832B658C0100302B3F /* ListExp */,
 				677F49822B658C0100302B3F /* Products */,
+				677F499B2B6591DF00302B3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +56,7 @@
 		677F49832B658C0100302B3F /* ListExp */ = {
 			isa = PBXGroup;
 			children = (
+				677F49922B658C5400302B3F /* ExpandableList */,
 				677F49842B658C0100302B3F /* ListExpApp.swift */,
 				677F49862B658C0100302B3F /* ContentView.swift */,
 				677F49882B658C0300302B3F /* Assets.xcassets */,
@@ -65,6 +71,28 @@
 				677F498B2B658C0300302B3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		677F49922B658C5400302B3F /* ExpandableList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExpandableList;
+			sourceTree = "<group>";
+		};
+		677F49992B658F4800302B3F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				677F499A2B658F6F00302B3F /* Modules */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		677F499B2B6591DF00302B3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +111,9 @@
 			dependencies = (
 			);
 			name = ListExp;
+			packageProductDependencies = (
+				677F499C2B6591DF00302B3F /* ExpandableList */,
+			);
 			productName = ListExp;
 			productReference = 677F49812B658C0100302B3F /* ListExp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +142,8 @@
 				Base,
 			);
 			mainGroup = 677F49782B658C0100302B3F;
+			packageReferences = (
+			);
 			productRefGroup = 677F49822B658C0100302B3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +375,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		677F499C2B6591DF00302B3F /* ExpandableList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExpandableList;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 677F49792B658C0100302B3F /* Project object */;
 }
