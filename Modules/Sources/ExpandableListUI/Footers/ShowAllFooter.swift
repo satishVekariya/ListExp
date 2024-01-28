@@ -21,7 +21,7 @@ struct ShowAllFooter: View {
             }, label: {
                 HStack {
                     Spacer()
-                    Text("Show All")
+                    Text(model.isShowAll ? "Hide" : "Show All")
                     Image(systemName: "chevron.up")
                         .rotationEffect( model.isShowAll ? .zero : .degrees(180), anchor: .center)
                         .animation(.easeInOut, value: model.isShowAll)
