@@ -13,7 +13,7 @@ struct ShowAllFooter: View {
     @ObservedObject var model: SectionModel
     
     var body: some View {
-        if model.isExpanded {
+        if !model.disableShowAll && model.isExpanded {
             Button(action: {
                 withAnimation(.easeInOut) {
                     model.toggleShowAll()
@@ -32,13 +32,13 @@ struct ShowAllFooter: View {
             .padding(.vertical, 12)
             .padding(.horizontal, 8)
             .background {
-                RoundedCorner(
-                    radius: 8,
-                    corners: [.bottomLeft, .bottomRight],
-                    inset: .init(top: 0.5, left: 0.5, bottom: 0.5, right: 0.5)
-                )
-                .stroke(lineWidth: 1)
-                .foregroundStyle(Color.divider)
+                Color.white
+                    .clipShape(UShape())
+                    .overlay {
+                        UShape()
+                            .stroke(lineWidth: 1)
+                            .foregroundStyle(Color.divider)
+                    }
             }
         }
     }
@@ -46,4 +46,7 @@ struct ShowAllFooter: View {
 
 #Preview {
     ShowAllFooter(model: .previewMock())
+        .padding()
+        .background(Color.yellow)
 }
+

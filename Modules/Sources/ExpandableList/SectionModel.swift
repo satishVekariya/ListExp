@@ -9,19 +9,22 @@ import Foundation
 
 @MainActor public final class SectionModel: ObservableObject, Identifiable {
     public let name: String
-    private let __items: [String]
+    private let __items: [Line]
     private let initialVisibleCount: Int
     
     @Published public private(set) var isExpanded = false
     @Published public private(set) var isShowAll = false
-    @Published public private(set) var items: [String] = []
+    @Published public private(set) var items: [Line] = []
+    @Published public var selectedIds = Set<String>()
+    public let disableShowAll: Bool
     
-    public init(_ name: String, items: [String], isExpanded: Bool = false) {
+    public init(_ name: String, items: [Line], isExpanded: Bool = false) {
         self.name = name
         self.__items = items
         self.isExpanded = isExpanded
         
         self.initialVisibleCount = [1, 1, 1, 2, 2, 3, 4].randomElement()!
+        self.disableShowAll = initialVisibleCount == items.count
         
         setItems()
     }
@@ -56,7 +59,17 @@ public extension SectionModel {
                 "Mobiles",
                 "Vegetables",
             ].randomElement()!,
-            items: (0..<3).map({ "Item: \($0)" })
+            items: (0..<3).map({
+                .init(
+                    name: "Item: \($0)",
+                    info: nil,
+                    items: [
+                        LineItem(id: UUID().uuidString, label: "Label1", value: "+123"),
+                        LineItem(id: UUID().uuidString, label: "Label2", value: "+1"),
+                        LineItem(id: UUID().uuidString, label: "Label3", value: "+12")
+                    ]
+                )
+            })
         )
     }
 }
